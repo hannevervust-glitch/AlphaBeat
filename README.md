@@ -46,4 +46,4 @@ python3 build2.py     # font + Glyphs file into source/out
 python3 export_letters.py
 ```
 
-The Alphabeat by Hanne Vervust and collaborators.
+The Alphabeat by Hanne Vervust and Lorenzo Bondani.

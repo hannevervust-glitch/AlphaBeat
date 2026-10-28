@@ -50,8 +50,8 @@ def setup_info(ufo):
     i.familyName = "Alphabeat"; i.styleName = "Regular"; i.unitsPerEm = 1000
     i.ascender = 750; i.descender = -250; i.xHeight = 500; i.capHeight = 750
     i.versionMajor = 2; i.versionMinor = 0
-    i.copyright = "The Alphabeat wave alphabet by Hanne Vervust and collaborators"
-    i.openTypeNameDesigner = "Hanne Vervust"; i.postscriptFontName = "Alphabeat-Regular"
+    i.copyright = "The Alphabeat wave alphabet by Hanne Vervust and Lorenzo Bondani"
+    i.openTypeNameDesigner = "Hanne Vervust, Lorenzo Bondani"; i.postscriptFontName = "Alphabeat-Regular"
     i.openTypeOS2TypoLineGap = 200
 
 def draw_polys(g, polys):

@@ -82,7 +82,7 @@ name = postscriptFontName;
 value = "Alphabeat-Regular";
 }
 );
-id = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+id = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 metricValues = (
 {
 over = 0;
@@ -112,7 +112,7 @@ glyphs = (
 glyphname = space;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -139,7 +139,7 @@ unicode = 32;
 glyphname = a;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -177,7 +177,7 @@ unicode = (65,97);
 glyphname = b;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -217,7 +217,7 @@ unicode = (66,98);
 glyphname = c;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -255,7 +255,7 @@ unicode = (67,99);
 glyphname = d;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -295,7 +295,7 @@ unicode = (68,100);
 glyphname = e;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -334,7 +334,7 @@ unicode = (69,101);
 glyphname = f;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -367,7 +367,7 @@ unicode = (70,102);
 glyphname = g;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -411,7 +411,7 @@ unicode = (71,103);
 glyphname = h;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -445,7 +445,7 @@ unicode = (72,104);
 glyphname = i;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -477,7 +477,7 @@ unicode = (73,105);
 glyphname = j;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -513,7 +513,7 @@ unicode = (74,106);
 glyphname = k;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -545,7 +545,7 @@ unicode = (75,107);
 glyphname = l;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -573,7 +573,7 @@ unicode = (76,108);
 glyphname = m;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -611,7 +611,7 @@ unicode = (77,109);
 glyphname = n;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -643,7 +643,7 @@ unicode = (78,110);
 glyphname = o;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -681,7 +681,7 @@ unicode = (79,111);
 glyphname = p;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -721,7 +721,7 @@ unicode = (80,112);
 glyphname = q;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -761,7 +761,7 @@ unicode = (81,113);
 glyphname = r;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -794,7 +794,7 @@ unicode = (82,114);
 glyphname = s;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -832,7 +832,7 @@ unicode = (83,115);
 glyphname = t;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -867,7 +867,7 @@ unicode = (84,116);
 glyphname = u;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -899,7 +899,7 @@ unicode = (85,117);
 glyphname = v;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -927,7 +927,7 @@ unicode = (86,118);
 glyphname = w;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -957,7 +957,7 @@ unicode = (87,119);
 glyphname = x;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -986,7 +986,7 @@ unicode = (88,120);
 glyphname = y;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -1016,7 +1016,7 @@ unicode = (89,121);
 glyphname = z;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -1047,7 +1047,7 @@ unicode = (90,122);
 glyphname = zero;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -1085,7 +1085,7 @@ unicode = 48;
 glyphname = one;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -1115,7 +1115,7 @@ unicode = 49;
 glyphname = two;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -1150,7 +1150,7 @@ unicode = 50;
 glyphname = three;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -1188,7 +1188,7 @@ unicode = 51;
 glyphname = four;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -1219,7 +1219,7 @@ unicode = 52;
 glyphname = five;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -1254,7 +1254,7 @@ unicode = 53;
 glyphname = six;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -1298,7 +1298,7 @@ unicode = 54;
 glyphname = seven;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -1328,7 +1328,7 @@ unicode = 55;
 glyphname = eight;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -1372,7 +1372,7 @@ unicode = 56;
 glyphname = nine;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -1416,7 +1416,7 @@ unicode = 57;
 glyphname = period;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -1443,7 +1443,7 @@ unicode = 46;
 glyphname = hyphen;
 layers = (
 {
-layerId = "0CA80C2C-241D-4797-A85B-0705990CD1C1";
+layerId = "3DDB765B-C943-48BF-B51D-A9BFF48D41C1";
 shapes = (
 {
 attr = {
@@ -1494,11 +1494,11 @@ type = "italic angle";
 properties = (
 {
 key = copyrights;
-value = "The Alphabeat wave alphabet by Hanne Vervust and collaborators";
+value = "The Alphabeat wave alphabet by Hanne Vervust and Lorenzo Bondani";
 },
 {
 key = designers;
-value = "Hanne Vervust";
+value = "Hanne Vervust, Lorenzo Bondani";
 }
 );
 stems = (
