@@ -113,11 +113,6 @@ html,body{margin:0}
     </div>
     <div class="err" id="err" role="status"></div>
     <div class="scope-wrap" id="scopewrap"><svg class="scope" id="scope" viewBox="0 0 680 230" role="img" aria-label="The typed text drawn as one wave"></svg></div>
-    <div class="legend" aria-hidden="true">
-      <span><svg width="28" height="8"><line x1="2" y1="4" x2="26" y2="4" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>Tall letter · octave up</span>
-      <span><svg width="28" height="8"><line x1="2" y1="4" x2="26" y2="4" stroke="currentColor" stroke-width="2"/></svg>Short letter · middle</span>
-      <span><svg width="28" height="8"><line x1="2" y1="4" x2="26" y2="4" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3"/></svg>Tail letter · sub bass</span>
-    </div>
     <div class="steps" id="steps" aria-hidden="true"></div>
   </section>
 
@@ -355,7 +350,7 @@ const semiOf=c=>{const z=zone(c)==='asc'?12:zone(c)==='desc'?-12:0;if(c in DEG)r
 const freqOf=c=>110*Math.pow(2,semiOf(c)/12);
 const noteName=c=>{const s=semiOf(c)+12,n=NN[((s%12)+12)%12],oct=1+Math.floor((s+9)/12);return n+oct;};
 /* black and white: zones by line weight and dash */
-const STYLE={asc:{w:3.5,dash:''},mid:{w:2,dash:''},desc:{w:2.5,dash:'6 4'}};
+const STYLE={asc:{w:2.5,dash:''},mid:{w:2.5,dash:''},desc:{w:2.5,dash:''}};
 const pathFor=(c,x,w,cy,amp,n=80)=>{let d='';for(let i=0;i<=n;i++){const t=i/n;d+=(i?'L':'M')+(x+t*w).toFixed(1)+' '+(cy-amp*shape(c,t)).toFixed(1);}return d;};
 
 /* guide-lines demo: hanne on the lines */
