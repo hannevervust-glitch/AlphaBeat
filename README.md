@@ -5,6 +5,7 @@ A typeface where every letter is a wave, and every wave is a sound.
 Each lowercase letter and number is drawn as one stroke on the classic type guide lines. The same drawing is used as the waveform of a synth, so typing a word plays it as a looping acid-techno bassline.
 
 **Play it:** [hannevervust-glitch.github.io/AlphaBeat](https://hannevervust-glitch.github.io/AlphaBeat/)  
+**Third edition, music explained through typography:** [hannevervust-glitch.github.io/AlphaBeat/iii.html](https://hannevervust-glitch.github.io/AlphaBeat/iii.html)  
 **Second edition, with music theory:** [hannevervust-glitch.github.io/AlphaBeat/ii.html](https://hannevervust-glitch.github.io/AlphaBeat/ii.html)
 
 ![Specimen](images/specimen.png)
@@ -14,6 +15,7 @@ Each lowercase letter and number is drawn as one stroke on the classic type guid
 | Folder | Contents |
 |---|---|
 | `index.html` | The Alphabeat website: the playable machine and the full system |
+| `iii.html` | The Alphabeat III: music explained for typographers, with a type-to-music dictionary, play buttons, and a part-by-part reading of every letter |
 | `ii.html` | The Alphabeat II: b d p q as one motif in four forms (prime, retrograde, inversion, retrograde inversion), names as hidden melodies (BACH, DSCH), overtones per letter |
 | `font/` | `Alphabeat.otf` (install and type) and `Alphabeat.glyphs` (edit in Glyphs) |
 | `drawing-sheets/` | One sheet per character on a 1000 UPM grid with every point's coordinates, as PNG, SVG and one PDF |
