@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="470" height="1000" viewBox="0 -750 470 1000">
+  <!-- Alphabeat "8" · 1000 UPM · advance width 470 · baseline at y=0 · stroke 64 round caps -->
+  <g transform="scale(1,-1)">
+    <path d="M0 250 C0 533 31 762 70 762 C109 762 141 533 141 250 C141 395 178 512 224 512 C269 512 306 395 306 250 C306 105 343 -12 388 -12 C433 -12 470 105 470 250" fill="none" stroke="#000" stroke-width="64" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

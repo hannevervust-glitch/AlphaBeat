@@ -1,0 +1,442 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Alphabeat</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: big writing field and machine, then short sections: sound, guide lines, anatomy, families, sound rules, numbers, check, field guide. Strictly black and white. */
+:root{
+  --bg:#FFFFFF; --ink:#000000;
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#000000; --ink:#FFFFFF; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#000000; --ink:#FFFFFF; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:64px}
+h1,h2,h3{margin:0;text-wrap:balance}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,7vw,72px);line-height:1;letter-spacing:-0.02em}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(20px,3vw,28px);line-height:1.15}
+h3{font-size:16px;font-weight:500}
+p{margin:0;max-width:62ch}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.lede{font-size:17px}
+.sec{display:grid;gap:20px}
+.sec-head{display:grid;gap:8px;border-top:2px solid var(--ink);padding-top:14px}
+header{display:grid;gap:14px}
+/* machine */
+.machine{border:2px solid var(--ink);padding:20px;display:grid;gap:16px}
+.lcd{display:block;width:100%;box-sizing:border-box;min-height:170px;resize:vertical;font-family:var(--mono);font-size:clamp(28px,4.6vw,46px);line-height:1.25;padding:20px 22px;border:2px solid var(--ink);border-radius:0;background:var(--bg);color:var(--ink)}
+.lcd::placeholder{color:var(--ink);opacity:.4}
+.lcd:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.row{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+.btn{font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:14px 28px;border:2px solid var(--ink);border-radius:0;background:var(--ink);color:var(--bg);cursor:pointer;min-width:140px}
+.btn.ghost{background:var(--bg);color:var(--ink);text-transform:none;letter-spacing:0;font-weight:400;min-width:0;padding:6px 12px;font-size:14px;border-width:1px}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+.ctrl{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.ctrl output{min-width:3ch;font-variant-numeric:tabular-nums}
+input[type=range]{accent-color:var(--ink);width:120px}
+input[type=checkbox]{accent-color:var(--ink);width:16px;height:16px}
+.presets{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.err{font-size:14px;font-weight:500;min-height:1.2em}
+.scope{width:100%;height:auto;display:block;border:1px solid var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 22px;font-family:var(--mono);font-size:12px}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.steps{display:grid;grid-template-columns:repeat(16,1fr);gap:4px}
+.step{aspect-ratio:1;max-width:100%;border:1px solid var(--ink);display:grid;place-items:center;font-family:var(--mono);font-size:11px;font-variant-numeric:tabular-nums}
+.step.beat{border-width:2px}
+.step.on{background:var(--ink);color:var(--bg)}
+@media (max-width:520px){.steps{grid-template-columns:repeat(8,1fr)}}
+/* tables */
+.table-wrap{overflow-x:auto;border:1px solid var(--ink)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--ink);vertical-align:top}
+th{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+tr:last-child td{border-bottom:none}
+td b{font-family:var(--mono);font-weight:500}
+td.k{font-weight:500;white-space:nowrap}
+.lines{width:100%;height:auto;display:block}
+/* cards of rules */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.rule{border:1px solid var(--ink);padding:14px 16px;display:grid;gap:4px;align-content:start;min-width:0}
+.rule .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.rule p{font-size:15px}
+.rule b{font-family:var(--mono);font-weight:500}
+.fam .big{font-family:var(--display);font-size:22px;font-weight:700;letter-spacing:.06em}
+.checkline{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline}
+.checkline strong{font-family:var(--display);font-size:22px}
+/* field guide */
+.letters{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.card{background:var(--bg);color:var(--ink);border:1px solid var(--ink);padding:14px 16px;display:grid;grid-template-rows:auto auto 1fr auto;gap:8px;cursor:pointer;text-align:left;font:inherit}
+.card:hover{outline:1px solid var(--ink)}
+.card.on{background:var(--ink);color:var(--bg)}
+.card-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.glyph{font-family:var(--display);font-size:34px;font-weight:700;line-height:1}
+.note{font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums}
+.card svg{width:100%;height:70px;display:block}
+.reasons{display:grid;gap:6px;font-size:14px;line-height:1.45}
+.reasons b{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin-right:6px}
+.recipe{font-family:var(--mono);font-size:11px;line-height:1.5;overflow-wrap:anywhere;border-top:1px dashed currentColor;padding-top:6px}
+footer{font-size:13px;border-top:1px solid var(--ink);padding-top:16px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+html,body{margin:0}
+</style>
+</head><body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">26 letters · 10 numbers · one wave</div>
+    <h1>The Alphabeat</h1>
+    <p class="lede">Every letter is drawn as a wave, and the drawing is the sound. Type anything and it plays as a techno loop.</p>
+  </header>
+
+  <section class="machine" aria-label="Techno machine">
+    <textarea class="lcd" id="word" maxlength="160" rows="3" placeholder="Type a word, a name or a number" autocomplete="off" spellcheck="false" aria-label="Text to play">techno is alive</textarea>
+    <div class="row">
+      <button class="btn" id="play" type="button">Play</button>
+      <label class="ctrl" for="bpm">BPM <input type="range" id="bpm" min="110" max="145" value="128"><output id="bpmv">128</output></label>
+      <label class="ctrl" for="cut">Filter <input type="range" id="cut" min="0" max="100" value="55"></label>
+      <label class="ctrl" for="drums"><input type="checkbox" id="drums" checked> Drums</label>
+    </div>
+    <div class="presets">
+      <span class="eyebrow">Try</span>
+      <button class="btn ghost" type="button" data-word="hanne">hanne</button>
+      <button class="btn ghost" type="button" data-word="techno is alive">techno is alive</button>
+      <button class="btn ghost" type="button" data-word="bdpq">bdpq</button>
+      <button class="btn ghost" type="button" data-word="moon on">moon on</button>
+      <button class="btn ghost" type="button" data-word="303 909">303 909</button>
+      <button class="btn ghost" type="button" data-word="12345678">12345678</button>
+    </div>
+    <div class="err" id="err" role="status"></div>
+    <svg class="scope" id="scope" viewBox="0 0 680 230" role="img" aria-label="The typed text drawn as one wave"></svg>
+    <div class="legend" aria-hidden="true">
+      <span><svg width="28" height="8"><line x1="2" y1="4" x2="26" y2="4" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>Tall letter · octave up</span>
+      <span><svg width="28" height="8"><line x1="2" y1="4" x2="26" y2="4" stroke="currentColor" stroke-width="2"/></svg>Short letter · middle</span>
+      <span><svg width="28" height="8"><line x1="2" y1="4" x2="26" y2="4" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 3"/></svg>Tail letter · sub bass</span>
+    </div>
+    <div class="steps" id="steps" aria-hidden="true"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="sound-h">
+    <div class="sec-head">
+      <div class="eyebrow">How it sounds</div>
+      <h2 id="sound-h">The sounds, one by one</h2>
+      <p class="lede">Everything is made live in your browser. No samples, no recordings. The style is acid techno, after the Roland TB-303 basslines of late-80s Chicago.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Sound</th><th>How it is made</th><th>What you hear</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Bassline</td><td>Each letter's drawing is looped hundreds of times a second as one vibration.</td><td>The shape is the tone: curves sound soft, corners buzz.</td></tr>
+          <tr><td class="k">Pitch</td><td>Faster loop, higher note. Letters climb the A minor scale; numbers are scale steps.</td><td>Any text sounds in key.</td></tr>
+          <tr><td class="k">Squelch</td><td>A resonant filter opens and closes on every note. The Filter slider sets how far.</td><td>The wet "acid" sound.</td></tr>
+          <tr><td class="k">Accent · slide</td><td>Tall letters hit harder; vowels glide from the previous note.</td><td>The classic 303 bite and bend.</td></tr>
+          <tr><td class="k">Kick</td><td>A low tone that drops quickly in pitch, on every beat.</td><td>Four-on-the-floor thump.</td></tr>
+          <tr><td class="k">Hi-hat</td><td>Short burst of filtered noise between the beats.</td><td>The tss on the offbeat.</td></tr>
+          <tr><td class="k">Clap</td><td>Mid-range noise burst on beats 2 and 4.</td><td>The snap that keeps time.</td></tr>
+          <tr><td class="k">Loop</td><td>One character per 16th note at 128 BPM. The beat repeats every 16 steps.</td><td>Text that is not 16 long drifts against the beat, so the loop keeps shifting.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="lines-h">
+    <div class="sec-head">
+      <div class="eyebrow">Rule 0</div>
+      <h2 id="lines-h">The type guide lines</h2>
+      <p class="lede">The four classic lines of lowercase, plus a centre line where the wave rests. Every letter starts and ends there.</p>
+    </div>
+    <svg class="lines" viewBox="0 0 680 230" role="img" aria-label="Guide lines: ascender 750, dot line 625, x-height 500, centre 250, low line 125, baseline 0, descender -250">
+      <g font-family="IBM Plex Mono, monospace" font-size="12" fill="currentColor" stroke="currentColor">
+        <line x1="20" x2="520" y1="20" y2="20" stroke-width=".7"/><text x="530" y="24" stroke="none">T 750 ascender</text>
+        <line x1="20" x2="520" y1="45" y2="45" stroke-width=".7" stroke-dasharray="3 5"/><text x="530" y="49" stroke="none">I 625 dot · t</text>
+        <line x1="20" x2="520" y1="70" y2="70" stroke-width=".7"/><text x="530" y="74" stroke="none">X 500 x-height</text>
+        <line x1="20" x2="520" y1="120" y2="120" stroke-width="1.5"/><text x="530" y="124" stroke="none" font-weight="500">M 250 centre</text>
+        <line x1="20" x2="520" y1="145" y2="145" stroke-width=".7" stroke-dasharray="3 5"/><text x="530" y="149" stroke="none">q 125 open curve</text>
+        <line x1="20" x2="520" y1="170" y2="170" stroke-width=".7"/><text x="530" y="174" stroke="none">B 0 baseline</text>
+        <line x1="20" x2="520" y1="220" y2="220" stroke-width=".7"/><text x="530" y="224" stroke="none">D −250 descender</text>
+      </g>
+      <path id="demo" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </section>
+
+  <section class="sec" aria-labelledby="anat-h">
+    <div class="sec-head">
+      <div class="eyebrow">Rule 1</div>
+      <h2 id="anat-h">Each letter part has one wave shape</h2>
+      <p class="lede">Read left to right, in writing order. Upper parts come first.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Part</th><th>Found in</th><th>Wave</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Stem</td><td><b>l i</b>, uprights of <b>b d h k p q</b></td><td>Straight spike</td></tr>
+          <tr><td class="k">Bowl</td><td><b>o</b>, round part of <b>b d p q g</b></td><td>Hump up, then valley down</td></tr>
+          <tr><td class="k">Arch · cup</td><td><b>n m h r</b> · <b>u</b></td><td>Hump · valley</td></tr>
+          <tr><td class="k">Open curve</td><td><b>c e</b></td><td>Shallow dip</td></tr>
+          <tr><td class="k">Diagonal</td><td><b>v w x y k z</b></td><td>Sharp slant</td></tr>
+          <tr><td class="k">Crossbar · gap</td><td><b>e f t z</b> · <b>r i j</b></td><td>Flat line</td></tr>
+          <tr><td class="k">Space</td><td>between words</td><td>Flat stripe, so the line never breaks. Silent in the loop.</td></tr>
+          <tr><td class="k">Hook</td><td><b>a f g j t</b></td><td>Curve instead of a point</td></tr>
+          <tr><td class="k">Dot</td><td><b>i j</b></td><td>Small spike, drawn last</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="fam-h">
+    <div class="sec-head">
+      <div class="eyebrow">Rule 2</div>
+      <h2 id="fam-h">Letter families</h2>
+      <p class="lede">Like type designers, we start from n and o and build the rest from them.</p>
+    </div>
+    <div class="grid3 fam">
+      <div class="rule"><span class="big">n m h r u</span><p>Arches. m is two n's, u is n upside down.</p></div>
+      <div class="rule"><span class="big">o c e s</span><p>Rounds. c and e are open o's.</p></div>
+      <div class="rule"><span class="big">b d p q</span><p>Mirrors and flips of one shape.</p></div>
+      <div class="rule"><span class="big">a g</span><p>Bowl plus hook.</p></div>
+      <div class="rule"><span class="big">l i j t f</span><p>Stems. i and j share the dot.</p></div>
+      <div class="rule"><span class="big">v w x y k z</span><p>Diagonals. w is two v's.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="rules-h">
+    <div class="sec-head">
+      <div class="eyebrow">Rule 3</div>
+      <h2 id="rules-h">From shape to sound</h2>
+    </div>
+    <div class="grid3">
+      <div class="rule"><span class="tag">Height → octave</span><p>Tall letters <b>b d f h k l t</b> go up an octave. Tail letters <b>g j p q y</b> go down into the sub bass.</p></div>
+      <div class="rule"><span class="tag">Size → volume</span><p>Bigger shapes play louder.</p></div>
+      <div class="rule"><span class="tag">Stroke → tone</span><p>Curves are warm. Straight lines buzz.</p></div>
+      <div class="rule"><span class="tag">Width → length</span><p>Narrow <b>i j l f t r</b> are short. Wide <b>m w</b> are long.</p></div>
+      <div class="rule"><span class="tag">Vowels → slide</span><p><b>a e i o u</b> glide in from the note before.</p></div>
+      <div class="rule"><span class="tag">Dot · double → rhythm</span><p>The dot adds a quick second hit. Double letters hold as one note.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="num-h">
+    <div class="sec-head">
+      <div class="eyebrow">Numbers</div>
+      <h2 id="num-h">0 to 9</h2>
+    </div>
+    <div class="grid3">
+      <div class="rule"><span class="tag">Oldstyle figures</span><p><b>0 1 2</b> sit at x-height, <b>6 8</b> rise, <b>3 4 5 7 9</b> drop, just like lowercase.</p></div>
+      <div class="rule"><span class="tag">One width</span><p>All digits share one width, so they all play the same length.</p></div>
+      <div class="rule"><span class="tag">Scale steps</span><p>The digit is the note: <b>1</b> A, <b>2</b> B, <b>3</b> C … <b>8</b> A an octave up. <b>0</b> is the low A.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="chk-h">
+    <div class="sec-head">
+      <div class="eyebrow">Consistency check</div>
+      <h2 id="chk-h">Every character follows the same rules</h2>
+    </div>
+    <div class="checkline"><strong>36 / 36 pass</strong><span>180 part checks · 17 family checks, run by script on the same data as the font.</span></div>
+  </section>
+
+  <section class="sec" aria-labelledby="guide">
+    <div class="sec-head">
+      <div class="eyebrow">Field guide</div>
+      <h2 id="guide">All letters</h2>
+      <p class="lede">Tap one to hear it.</p>
+    </div>
+    <div class="letters" id="letters"></div>
+    <h2 style="margin-top:16px">All numbers</h2>
+    <div class="letters" id="numbers"></div>
+  </section>
+
+  <footer>The Alphabeat by Hanne Vervust and collaborators. Sound starts when you press Play or tap a letter.</footer>
+</div>
+
+<script>
+const NS='http://www.w3.org/2000/svg';
+/* Same recipes as the Alphabeat font and Glyphs file. [kind, x end, line, anatomy part] */
+const LV={T:750,I:625,X:500,M:250,q:125,B:0,D:-250},KT={arc:.5523,sq:.85};
+const RECIPE={
+a:[['arc',.55,'B','lower bowl'],['arc',1,'X','hooked stem']],
+b:[['line',.15,'T','ascender stem'],['line',.3,'M','ascender stem'],['arc',.65,'X','bowl'],['arc',1,'B','bowl']],
+c:[['arc',.5,'X','bowl'],['arc',1,'q','aperture']],
+d:[['arc',.35,'X','bowl'],['arc',.7,'B','bowl'],['line',.85,'T','ascender stem'],['line',1,'M','ascender stem']],
+e:[['arc',.45,'X','eye'],['line',.6,'M','crossbar'],['arc',1,'q','aperture']],
+f:[['arc',.5,'T','hooked ascender'],['line',1,'M','crossbar']],
+g:[['arc',.3,'X','bowl'],['arc',.6,'B','bowl'],['arc',1,'D','hooked descender']],
+h:[['line',.15,'T','ascender stem'],['line',.3,'M','ascender stem'],['arc',1,'X','arch']],
+i:[['line',.25,'X','stem'],['line',.5,'M','stem'],['line',.65,'M','space'],['line',.75,'I','tittle'],['line',.85,'M','tittle'],['line',1,'M','space']],
+j:[['arc',.55,'D','hooked descender'],['line',.65,'M','space'],['line',.75,'I','tittle'],['line',.85,'M','tittle'],['line',1,'M','space']],
+k:[['line',.15,'T','ascender stem'],['line',.3,'M','ascender stem'],['line',.5,'X','arm'],['line',.65,'M','arm'],['line',.85,'B','leg'],['line',1,'M','leg']],
+l:[['line',.5,'T','ascender stem'],['line',1,'M','ascender stem']],
+m:[['arc',.5,'X','arch'],['arc',1,'X','arch']],
+n:[['arc',1,'X','arch']],
+o:[['arc',.5,'X','bowl'],['arc',1,'B','bowl']],
+p:[['line',.15,'D','descender stem'],['line',.3,'M','descender stem'],['arc',.65,'X','bowl'],['arc',1,'B','bowl']],
+q:[['arc',.35,'X','bowl'],['arc',.7,'B','bowl'],['line',.85,'D','descender stem'],['line',1,'M','descender stem']],
+r:[['arc',.6,'X','arch'],['line',1,'M','space']],
+s:[['sq',.5,'X','spine'],['sq',1,'B','spine']],
+t:[['line',.25,'I','short ascender'],['line',.5,'M','short ascender'],['line',.7,'M','crossbar'],['arc',1,'q','hooked foot']],
+u:[['arc',1,'B','cup']],
+v:[['line',.5,'B','diagonal'],['line',1,'M','diagonal']],
+w:[['line',.25,'B','diagonal'],['line',.5,'X','diagonal'],['line',.75,'B','diagonal'],['line',1,'M','diagonal']],
+x:[['line',.25,'X','diagonal'],['line',.75,'B','diagonal'],['line',1,'M','diagonal']],
+y:[['line',.3,'B','diagonal'],['line',.45,'M','diagonal'],['line',.8,'D','descender diagonal'],['line',1,'M','descender diagonal']],
+z:[['line',.25,'M','crossbar'],['line',.4,'X','diagonal'],['line',.6,'B','diagonal'],['line',.75,'M','diagonal'],['line',1,'M','crossbar']],
+'0':[['arc',.5,'X','bowl'],['arc',1,'B','bowl']],
+'1':[['line',.15,'M','space'],['line',.55,'X','flag'],['line',.65,'M','stem'],['line',1,'M','space']],
+'2':[['arc',.45,'X','arch'],['line',.65,'B','diagonal'],['line',.75,'M','diagonal'],['line',1,'M','bar']],
+'3':[['arc',.4,'X','upper bowl'],['arc',1,'D','hooked descender']],
+'4':[['line',.3,'X','diagonal'],['line',.45,'M','diagonal'],['line',.6,'M','bar'],['line',.8,'D','descender stem'],['line',1,'M','descender stem']],
+'5':[['line',.2,'M','bar'],['line',.3,'X','stem'],['line',.4,'M','stem'],['arc',1,'D','hooked descender']],
+'6':[['arc',.4,'T','hooked ascender'],['arc',.7,'X','bowl'],['arc',1,'B','bowl']],
+'7':[['line',.3,'M','bar'],['line',.45,'X','diagonal'],['line',.8,'D','descender diagonal'],['line',1,'M','descender diagonal']],
+'8':[['arc',.3,'T','upper bowl'],['arc',.65,'X','bowl'],['arc',1,'B','bowl']],
+'9':[['arc',.3,'X','bowl'],['arc',.6,'B','bowl'],['arc',1,'D','hooked descender']]};
+const WHY={
+a:['Low bowl, then a hooked stem.','Warm and middle. Slides in.'],
+b:['Tall stem, then a round bowl.','Bright accent up high, warm tail.'],
+c:['An o left open on the right.','Soft and gentle.'],
+d:['b mirrored: bowl, then stem.','Warm start, bright end.'],
+e:['Closed eye, flat bar, open bottom.','Round, a bit hollow. Slides in.'],
+f:['Tall hooked stem, then a bar.','High and short, softer than l.'],
+g:['Round bowl, hooked tail below.','Heavy, round sub bass.'],
+h:['Tall stem plus the n arch.','Bright attack, warm body.'],
+i:['Short stem, then the dot.','Quick double hit. Slides in.'],
+j:['Hooked tail below, then the dot.','Sub bass double hit.'],
+k:['Tall stem, arm up, leg down.','The buzziest letter.'],
+l:['One tall straight stem.','Clean, bright, short.'],
+m:['Two n arches. A wide letter.','Warm and long.'],
+n:['One arch. The control letter.','The softest sound, like a flute.'],
+o:['One full round bowl.','The purest tone. Slides in.'],
+p:['b with its stem below.','Sub punch, warm bowl.'],
+q:['p mirrored.','Warm, then a sub drop.'],
+r:['n without its right leg.','Short and clipped.'],
+s:['An o with tighter turns.','Fatter than o.'],
+t:['Short stem, bar, little foot.','High but gentle, short.'],
+u:['n upside down.','Warm and soft. Slides in.'],
+v:['Two diagonals meeting low.','Hard and nasal.'],
+w:['Two v shapes. A wide letter.','Buzzy and long.'],
+x:['Two diagonals crossing.','Sharp and balanced.'],
+y:['A v with a long tail.','Dark, deep buzz.'],
+z:['Flat, sharp diagonal, flat.','A snap between pauses.'],
+'0':['The o shape, number width.','Step 0: the low A.'],
+'1':['Short stem with a flag.','Step 1: the root A.'],
+'2':['Curved top, diagonal, flat foot.','Step 2: B.'],
+'3':['Two bowls, the lower one drops.','Step 3: C, round sub bass.'],
+'4':['Diagonal, bar, stem dropping.','Step 4: D, hard sub bass.'],
+'5':['Flat top, stem, hooked tail.','Step 5: E, the fifth.'],
+'6':['Rising hook into a bowl.','Step 6: F, high accent.'],
+'7':['Flat top, long dropping diagonal.','Step 7: G, dark buzz.'],
+'8':['Tall bowl on a round bowl.','Step 8: A, two octaves up.'],
+'9':['6 turned around.','Step 9: B, rounder than 2.']};
+function samplePts(r){const pts=[[0,250]];let x0=0;
+  for(const [k,x1,lv] of r){const p=LV[lv];
+    if(k==='line'){pts.push([x1,p]);}
+    else{const kk=KT[k],xm=(x0+x1)/2,M=250,cy=M+kk*(p-M);
+      for(const s of [[[x0,M],[x0,cy],[xm-kk*(xm-x0),p],[xm,p]],[[xm,p],[xm+kk*(x1-xm),p],[x1,cy],[x1,M]]])
+        for(let i=1;i<=24;i++){const t=i/24,u=1-t,b=j=>u*u*u*s[0][j]+3*u*u*t*s[1][j]+3*u*t*t*s[2][j]+t*t*t*s[3][j];pts.push([b(0),b(1)]);}}
+    x0=x1;}
+  return pts;}
+const F={' ':t=>0},PTS={};
+for(const c in RECIPE){const pts=PTS[c]=samplePts(RECIPE[c]);
+  F[c]=t=>{for(let i=1;i<pts.length;i++){const [xa,ya]=pts[i-1],[xb,yb]=pts[i];if(t<=xb){const f=xb>xa?(t-xa)/(xb-xa):1;return ((ya+(yb-ya)*f)-250)/500;}}return 0;};}
+const recipeText=c=>RECIPE[c].map(([k,x,l])=>k+'('+x+','+l+')').join(' ');
+/* sound rules */
+const ASC='bdfhklt68',DESC='gjpqy34579',NARROW='ijlftr',WIDE='mw',VOW='aeiou',DOT='ij',DIGITS='0123456789';
+const DEG={'0':-12,'1':0,'2':2,'3':3,'4':5,'5':7,'6':8,'7':10,'8':12,'9':14};
+const zone=c=>ASC.includes(c)?'asc':DESC.includes(c)?'desc':'mid';
+const gateOf=c=>NARROW.includes(c)?.35:WIDE.includes(c)?1:.7;
+const wid=c=>c===' '?.5:DIGITS.includes(c)?470/520:NARROW.includes(c)?.6:WIDE.includes(c)?1.4:1;
+const shape=(c,t)=>c===' '?0:F[c](t);
+const SC=[0,2,3,5,7,8,10],NN=['A','A#','B','C','C#','D','D#','E','F','F#','G','G#'];
+const semiOf=c=>{const z=zone(c)==='asc'?12:zone(c)==='desc'?-12:0;if(c in DEG)return DEG[c]+z;const d=(c.charCodeAt(0)-97)%14;return SC[d%7]+12*Math.floor(d/7)+z;};
+const freqOf=c=>110*Math.pow(2,semiOf(c)/12);
+const noteName=c=>{const s=semiOf(c)+12,n=NN[((s%12)+12)%12],oct=1+Math.floor((s+9)/12);return n+oct;};
+/* black and white: zones by line weight and dash */
+const STYLE={asc:{w:3.5,dash:''},mid:{w:2,dash:''},desc:{w:2.5,dash:'6 4'}};
+const pathFor=(c,x,w,cy,amp,n=80)=>{let d='';for(let i=0;i<=n;i++){const t=i/n;d+=(i?'L':'M')+(x+t*w).toFixed(1)+' '+(cy-amp*shape(c,t)).toFixed(1);}return d;};
+
+/* guide-lines demo: hanne on the lines */
+(function(){const w='hanne'.split(''),tot=w.reduce((s,c)=>s+wid(c),0),x0=30,W=470,sy=y=>170-(y)*0.2;let d='',x=x0;
+  w.forEach(c=>{const ww=wid(c)/tot*W;PTS[c].forEach(([px,py])=>{d+=(d?'L':'M')+(x+px*ww).toFixed(1)+' '+sy(py).toFixed(1);});x+=ww;});
+  document.getElementById('demo').setAttribute('d',d);})();
+
+/* field guide */
+const cards={};
+'abcdefghijklmnopqrstuvwxyz0123456789'.split('').forEach(c=>{
+  const st=STYLE[zone(c)];
+  const b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-label',(DIGITS.includes(c)?'Play number ':'Play letter ')+c);
+  b.innerHTML='<div class="card-top"><span class="glyph">'+c+'</span><span class="note">'+noteName(c)+'</span></div>'+
+   '<svg viewBox="0 0 200 76" aria-hidden="true"><line x1="0" y1="38" x2="200" y2="38" stroke="currentColor" stroke-width=".5"/><path d="'+pathFor(c,10,180,38,33)+'" fill="none" stroke="currentColor" stroke-width="'+st.w+'"'+(st.dash?' stroke-dasharray="'+st.dash+'"':'')+' stroke-linecap="round" stroke-linejoin="round"/></svg>'+
+   '<div class="reasons"><p><b>Looks</b>'+WHY[c][0]+'</p><p><b>Sounds</b>'+WHY[c][1]+'</p></div>'+
+   '<div class="recipe">'+recipeText(c)+'</div>';
+  b.addEventListener('click',()=>playOne(c));document.getElementById(DIGITS.includes(c)?'numbers':'letters').appendChild(b);cards[c]=b;});
+
+/* scope + steps */
+const scope=document.getElementById('scope');let segs=[];
+function el(t,a,txt){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(txt)e.textContent=txt;scope.appendChild(e);return e;}
+const wordEl=document.getElementById('word');
+const letters=()=>wordEl.value.toLowerCase().replace(/\s+/g,' ').split('').filter(c=>F[c]);
+function setSeg(p,on){const z=p.dataset.z;p.setAttribute('stroke-width',on?(STYLE[z].w+3):STYLE[z].w);}
+function drawWord(){scope.innerHTML='';segs=[];const ls=letters();if(!ls.length)return;
+  const tot=ls.reduce((s,c)=>s+wid(c),0),x0=30,W=620,cy=95,amp=78;
+  el('line',{x1:x0-10,y1:cy,x2:x0+W+10,y2:cy,stroke:'currentColor','stroke-width':.6});
+  el('line',{x1:x0-10,y1:cy-amp*.5,x2:x0+W+10,y2:cy-amp*.5,stroke:'currentColor','stroke-width':.4,'stroke-dasharray':'2 6'});
+  el('line',{x1:x0-10,y1:cy+amp*.5,x2:x0+W+10,y2:cy+amp*.5,stroke:'currentColor','stroke-width':.4,'stroke-dasharray':'2 6'});
+  const small=ls.length>40;
+  let x=x0;ls.forEach((c,j)=>{const w=wid(c)/tot*W,z=c===' '?'mid':zone(c),st=STYLE[z];
+    const a={d:pathFor(c,x,w,cy,amp),fill:'none',stroke:'currentColor','stroke-width':st.w,'stroke-linecap':'round','stroke-linejoin':'round'};
+    if(st.dash)a['stroke-dasharray']=st.dash;const p=el('path',a);p.dataset.z=z;segs.push(p);
+    if(c!==' '&&!small){el('text',{x:x+w/2,y:205,'text-anchor':'middle',fill:'currentColor','font-family':'IBM Plex Mono, monospace','font-size':14},c);
+      const prev=ls[j-1];let tag=prev===c?'tie':DOT.includes(c)?'×2':VOW.includes(c)?'slide':'';
+      if(tag)el('text',{x:x+w/2,y:222,'text-anchor':'middle',fill:'currentColor','font-family':'IBM Plex Mono, monospace','font-size':11},tag);}
+    x+=w;});}
+const stepsEl=document.getElementById('steps'),padEls=[];
+for(let i=0;i<16;i++){const p=document.createElement('div');p.className='step'+(i%4===0?' beat':'');p.textContent=i+1;stepsEl.appendChild(p);padEls.push(p);}
+
+/* audio */
+let ctx,master,noise,timer=null,step=0,nextT=0,playing=false,lastF=null;const bufs={};
+function initAudio(){if(ctx)return;ctx=new (window.AudioContext||window.webkitAudioContext)();
+  const comp=ctx.createDynamicsCompressor();comp.threshold.value=-14;comp.ratio.value=4;master=ctx.createGain();master.gain.value=.8;master.connect(comp).connect(ctx.destination);
+  noise=ctx.createBuffer(1,ctx.sampleRate*.5,ctx.sampleRate);const d=noise.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;}
+function bufFor(c){if(bufs[c])return bufs[c];const sr=ctx.sampleRate,n=Math.round(sr/freqOf(c)),b=ctx.createBuffer(1,n,sr),d=b.getChannelData(0);let m=0;
+  for(let i=0;i<n;i++){d[i]=shape(c,i/n);m+=d[i];}m/=n;for(let i=0;i<n;i++)d[i]-=m;return bufs[c]=b;}
+function kick(t){const o=ctx.createOscillator(),g=ctx.createGain();o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(45,t+.12);g.gain.setValueAtTime(1,t);g.gain.exponentialRampToValueAtTime(.001,t+.4);o.connect(g).connect(master);o.start(t);o.stop(t+.42);}
+function nz(t,type,f,dec,vol){const s=ctx.createBufferSource(),fl=ctx.createBiquadFilter(),g=ctx.createGain();s.buffer=noise;fl.type=type;fl.frequency.value=f;g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.001,t+dec);s.connect(fl).connect(g).connect(master);s.start(t);s.stop(t+dec+.02);}
+function hit(c,t,len,gate,slideFrom){const z=zone(c),acc=z==='asc',cut=document.getElementById('cut').value/100;
+  const src=ctx.createBufferSource(),f=ctx.createBiquadFilter(),g=ctx.createGain();src.buffer=bufFor(c);src.loop=true;
+  if(slideFrom){src.playbackRate.setValueAtTime(slideFrom/freqOf(c),t);src.playbackRate.exponentialRampToValueAtTime(1,t+Math.min(.09,len*.6));}
+  f.type='lowpass';f.Q.value=acc?18:10;
+  const top=(acc?700:250)+(acc?6500:3500)*cut*(z==='desc'?.5:1);
+  f.frequency.setValueAtTime(top,t);f.frequency.exponentialRampToValueAtTime(Math.max(110,top*(acc?.15:.12)),t+(acc?.14:.2));
+  const v=(acc?.42:z==='desc'?.5:.32),dur=len*gate;
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.004);g.gain.setValueAtTime(v,t+dur*.75);g.gain.linearRampToValueAtTime(0,t+dur);
+  src.connect(f).connect(g).connect(master);src.start(t);src.stop(t+dur+.01);}
+function note(c,t,len){
+  const slide=VOW.includes(c)&&lastF?lastF:null;
+  if(DOT.includes(c)){hit(c,t,len/2,.8,slide);hit(c,t+len/2,len/2,.8,null);}
+  else hit(c,t,len,gateOf(c),slide);
+  lastF=freqOf(c);}
+function lightCard(c){Object.values(cards).forEach(b=>b.classList.remove('on'));if(cards[c])cards[c].classList.add('on');}
+function playOne(c){initAudio();ctx.resume();lastF=null;note(c,ctx.currentTime+.02,.4);lightCard(c);setTimeout(()=>{if(!playing&&cards[c])cards[c].classList.remove('on');},500);}
+function schedule(){const ls=letters();if(!ls.length)return;const s16=60/document.getElementById('bpm').value/4,L=ls.length;
+  while(nextT<ctx.currentTime+.12){const s=step%16,li=step%L,c=ls[li],t=nextT,prev=ls[(li-1+L)%L];
+    if(document.getElementById('drums').checked){if(s%4===0)kick(t);if(s%4===2)nz(t,'highpass',7000,.05,.25);if(s===4||s===12)nz(t,'bandpass',1500,.16,.5);}
+    if(c===' ')lastF=null;
+    else if(!(L>1&&prev===c)){let run=1;while(run<L&&ls[(li+run)%L]===c)run++;
+      if(run>1){hit(c,t,s16*run,.95,VOW.includes(c)&&lastF?lastF:null);lastF=freqOf(c);}
+      else note(c,t,s16);}
+    setTimeout(()=>{if(!playing)return;padEls.forEach(p=>p.classList.remove('on'));padEls[s].classList.add('on');
+      segs.forEach(p=>setSeg(p,false));if(segs[li])setSeg(segs[li],true);},Math.max(0,(t-ctx.currentTime)*1000));
+    nextT+=s16;step++;}}
+const playBtn=document.getElementById('play'),err=document.getElementById('err');
+function stop(){playing=false;clearInterval(timer);timer=null;padEls.forEach(p=>p.classList.remove('on'));segs.forEach(p=>setSeg(p,false));playBtn.textContent='Play';}
+function start(){if(!letters().some(c=>c!==' ')){err.textContent='Type at least one letter or number first.';return;}
+  initAudio();ctx.resume();drawWord();playing=true;step=0;lastF=null;nextT=ctx.currentTime+.06;timer=setInterval(schedule,25);playBtn.textContent='Stop';}
+playBtn.addEventListener('click',()=>playing?stop():start());
+document.getElementById('bpm').addEventListener('input',e=>document.getElementById('bpmv').textContent=e.target.value);
+wordEl.addEventListener('input',()=>{err.textContent='';drawWord();if(playing&&!letters().some(c=>c!==' '))stop();});
+wordEl.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();playing?stop():start();}});
+document.querySelectorAll('[data-word]').forEach(b=>b.addEventListener('click',()=>{wordEl.value=b.dataset.word;err.textContent='';drawWord();if(!playing)start();}));
+drawWord();
+</script>
+</body></html>
